@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import ProductCard from "./ui/ProductCard";
+import ImageGalleryButton from "./ui/ImageGalleryButton";
 
 function ProductGallery({
   products,
@@ -31,6 +32,10 @@ function ProductGallery({
         {displayedProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
+      </div>
+      <div className="relative flex gap-2 mt-4 md:mt-10 justify-center">
+        <ImageGalleryButton variant="left" handleAction={handlePrevPage} />
+        <ImageGalleryButton variant="right" handleAction={handleNextPage} />
       </div>
     </div>
   );

@@ -4,11 +4,14 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import HamburguerMenu from "./ui/HamburguerMenu";
+import useProductStore from "../store/cartStore";
+import CartCount from "./ui/CartCount";
 
 const menuItems = ["HOME", "ITEM 1", "ITEM 2", "ITEM 3", "ITEM 4", "ITEM 5"];
 
 export default function Menu() {
   const [selected, setSelected] = useState(0);
+  const { setIsModalOpen, getTotalItems } = useProductStore();
 
   return (
     <nav className="bg-white shadow-md max-w-full mx-auto px-1 md:px-4 lg:px-8">
@@ -33,7 +36,13 @@ export default function Menu() {
             </Link>
           ))}
         </div>
-        <div className="cart sm:ml-6 flex items-center absolute right-0 h-full">
+        <div
+          className="cart sm:ml-6 flex items-center absolute right-0 h-full cursor-pointer"
+          onClick={() => {
+            setIsModalOpen(true);
+          }}
+        >
+          <CartCount getTotalItems={getTotalItems} />
           <button type="button" className="bg-white p-1">
             <Image
               className="h-10 w-10"

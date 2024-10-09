@@ -14,6 +14,7 @@ const config: Config = {
         700: "#7AA65A",
       },
       white: "#fff",
+      black: "#000",
       transparent: "transparent ",
     },
     extend: {
