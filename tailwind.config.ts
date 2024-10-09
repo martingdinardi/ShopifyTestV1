@@ -11,9 +11,10 @@ const config: Config = {
       green: {
         100: "#7aa65a94",
         500: "#7aa65ad9",
-        700: "#7AA65A"
+        700: "#7AA65A",
       },
-      white: "#fff"
+      white: "#fff",
+      transparent: "transparent ",
     },
     extend: {
       colors: {
