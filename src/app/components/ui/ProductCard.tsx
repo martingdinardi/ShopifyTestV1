@@ -4,7 +4,7 @@ import React from "react";
 
 function ProductCard({ product }: { product: ShopifyProduct }) {
   return (
-    <div className="bg-white rounded-3xl card-shadow flex flex-col h-96 p-4 w-64">
+    <div className="bg-white rounded-3xl card-shadow flex flex-col h-[26rem] p-4 w-64">
       <div className="h-full">
         <Image
           src={
@@ -16,7 +16,8 @@ function ProductCard({ product }: { product: ShopifyProduct }) {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="pt-2">
+      <div className="pt-2 text-start">
+        <p className="text-sm mb-2">{product.title}</p>
         <div className="flex justify-between items-center">
           <span className="text-lg font-medium">
             ${parseFloat(product.priceRange.minVariantPrice.amount).toFixed(2)}
