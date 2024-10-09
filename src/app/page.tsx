@@ -9,7 +9,7 @@ export default async function Home() {
 
   return (
     <div className={inter.className}>
-      <Header />
+      <Header products={products} />
       <ProductGallery products={products} title="Featured Collection" />
     </div>
   );
