@@ -27,7 +27,7 @@ export default function Slider({ products }: { products: ShopifyProduct[] }) {
         className="absolute top-0 object-cover"
       />
       <Swiper
-        modules={[Navigation /* , Autoplay */]}
+        modules={[Navigation , Autoplay]}
         spaceBetween={0}
         slidesPerView={1}
         navigation={{
