@@ -24,13 +24,13 @@ function ProductGallery({
   );
 
   return (
-    <div className="mx-auto px-2 md:px-4 py-8 w-full max-w-7xl md:text-center">
+    <div className="mx-auto px-2 md:px-4 py-8 w-full max-w-7xl">
       {title && (
-        <h1 className="font-bold text-2xl md:text-[34px] text-green-100 mb-6 text-center">
+        <h1 className="font-bold text-4xl text-green-100 mb-6 text-center">
           {title}
         </h1>
       )}
-      <div className="grid grid-cols-2 md:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
         {displayedProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

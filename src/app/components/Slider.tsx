@@ -27,7 +27,7 @@ export default function Slider({ products }: { products: ShopifyProduct[] }) {
         className="absolute top-0 object-cover"
       />
       <Swiper
-        modules={[Navigation, Autoplay]}
+        modules={[Navigation /* , Autoplay */]}
         spaceBetween={0}
         slidesPerView={1}
         navigation={{
@@ -61,7 +61,7 @@ export default function Slider({ products }: { products: ShopifyProduct[] }) {
                 <p className="hidden md:block text-base font-light text-green-700 md:mb-4">
                   {product.description.split(".")[0]}.
                 </p>
-                <div className="flex flex-col md:flex-row gap-3 py-2">
+                <div className="flex flex-col lg:flex-row gap-3 py-2">
                   <SliderLink title="SHOP NOW" variant="fill" />
                   <SliderLink title="TAKE THE QUIZ" />
                 </div>

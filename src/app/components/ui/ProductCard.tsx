@@ -11,8 +11,8 @@ function ProductCard({ product }: { product: ShopifyProduct }) {
     toast.success("Product added to cart successfully");
   };
   return (
-    <div className="bg-white rounded-3xl card-shadow flex flex-col h-full p-4 w-full">
-      <div className="aspect-square relative mb-2">
+    <div className="bg-white rounded-3xl card-shadow flex flex-col p-4 w-full h-full">
+      <div className="aspect-square relative mb-2 bg-green-500 overflow-hidden">
         <Image
           src={
             product.images.edges?.[0]?.node?.originalSrc || "/not-image.webp"
@@ -24,8 +24,8 @@ function ProductCard({ product }: { product: ShopifyProduct }) {
         />
       </div>
       <div className="flex flex-col justify-between flex-grow">
-        <p className="text-sm mb-2">{product.title}</p>
-        <div className="flex justify-between items-center">
+        <p className="hidden sm:block text-sm sm:mb-2">{product.title}</p>
+        <div className="flex flex-col items-center sm:flex-row sm:justify-between">
           <span className="text-lg font-medium">
             ${parseFloat(product.priceRange.minVariantPrice.amount).toFixed(2)}
           </span>
