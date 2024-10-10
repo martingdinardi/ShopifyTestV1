@@ -27,3 +27,7 @@ interface ShopifyProductsResponse {
     }>;
   };
 }
+
+interface CartItem extends ShopifyProduct {
+  quantity: number;
+}

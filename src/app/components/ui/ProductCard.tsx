@@ -1,8 +1,15 @@
+import useProductStore from "@/app/store/cartStore";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
+import { toast } from "sonner";
 
 function ProductCard({ product }: { product: ShopifyProduct }) {
+  const { addToCart } = useProductStore();
+
+  const handleButton = () => {
+    addToCart(product);
+    toast.success("Product added to cart successfully");
+  };
   return (
     <div className="bg-white rounded-3xl card-shadow flex flex-col h-[26rem] p-4 w-64">
       <div className="h-full">
@@ -22,12 +29,12 @@ function ProductCard({ product }: { product: ShopifyProduct }) {
           <span className="text-lg font-medium">
             ${parseFloat(product.priceRange.minVariantPrice.amount).toFixed(2)}
           </span>
-          <Link
-            href={"#"}
-            className="bg-green-700 text-white px-3 py-[2px] h-fit rounded-2xl shadow hover:scale-105 transition-all duration-300"
+          <div
+            className="bg-green-700 text-white px-3 py-[2px] h-fit rounded-2xl shadow hover:scale-105 transition-all duration-300 cursor-pointer"
+            onClick={handleButton}
           >
             <span className="text-shadow font-light">BUY NOW</span>
-          </Link>
+          </div>
         </div>
       </div>
     </div>
