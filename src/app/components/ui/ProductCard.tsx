@@ -11,8 +11,8 @@ function ProductCard({ product }: { product: ShopifyProduct }) {
     toast.success("Product added to cart successfully");
   };
   return (
-    <div className="bg-white rounded-3xl card-shadow flex flex-col h-[26rem] p-4 w-64">
-      <div className="h-full">
+    <div className="bg-white rounded-3xl card-shadow flex flex-col h-full p-4 w-full">
+      <div className="aspect-square relative mb-2">
         <Image
           src={
             product.images.edges?.[0]?.node?.originalSrc || "/not-image.webp"
@@ -23,7 +23,7 @@ function ProductCard({ product }: { product: ShopifyProduct }) {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="pt-2 text-start">
+      <div className="flex flex-col justify-between flex-grow">
         <p className="text-sm mb-2">{product.title}</p>
         <div className="flex justify-between items-center">
           <span className="text-lg font-medium">
